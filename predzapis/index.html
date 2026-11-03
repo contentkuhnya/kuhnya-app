@@ -3,18 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0A0A0A">
-<title>Предобучение Claude | НЕЙРО СММ</title>
+<meta name="theme-color" content="#0B0709">
+<title>Интенсив НЕЙРО СММ | предзапись</title>
 <script src="../telegram-web-app.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Golos+Text:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0A0A0A; --card:#141414; --card-2:#1B1B1B;
-    --lime:#CCFF00; --lime-dim:rgba(204,255,0,.14);
-    --white:#FFFFFF; --grey:#8C8C8C; --grey-2:#B5B5B5;
-    --line:rgba(255,255,255,.08);
+    --bg:#0B0709; --card:#171012; --card-2:#1F1417;
+    --lime:#E9B949; --lime-dim:rgba(233,185,73,.15);
+    --red:#B3101F; --red-dark:#4A0610; --cream:#FFF6DB;
+    --white:#FFFFFF; --grey:#9A8C8E; --grey-2:#C9BBB6;
+    --line:rgba(233,185,73,.16);
   }
   *,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0;background:var(--bg)}
@@ -24,67 +25,77 @@
     padding:0 16px calc(28px + env(safe-area-inset-bottom,0px));
     max-width:560px;margin:0 auto;
     background-image:
-      radial-gradient(70% 40% at 50% -6%, rgba(204,255,0,.16) 0%, transparent 70%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='64' viewBox='0 0 56 64'%3E%3Cpath d='M28 1 54 16v32L28 63 2 48V16z' fill='none' stroke='%23CCFF00' stroke-opacity='.06' stroke-width='1.2'/%3E%3C/svg%3E");
+      radial-gradient(80% 36% at 50% -8%, rgba(200,22,42,.42) 0%, transparent 70%),
+      radial-gradient(60% 30% at 100% 30%, rgba(233,185,73,.10) 0%, transparent 70%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%23FFFFFF'%3E%3Ccircle cx='14' cy='18' r='1.3' opacity='.5'/%3E%3Ccircle cx='78' cy='9' r='1' opacity='.35'/%3E%3Ccircle cx='101' cy='64' r='1.4' opacity='.45'/%3E%3Ccircle cx='40' cy='88' r='1' opacity='.3'/%3E%3Ccircle cx='63' cy='112' r='1.2' opacity='.4'/%3E%3C/g%3E%3Cg fill='%23E9B949'%3E%3Ccircle cx='55' cy='44' r='1.1' opacity='.7'/%3E%3Ccircle cx='9' cy='70' r='.9' opacity='.6'/%3E%3Ccircle cx='112' cy='100' r='1' opacity='.6'/%3E%3C/g%3E%3Cg stroke='%23FFFFFF' stroke-opacity='.18' stroke-width='1' stroke-linecap='round'%3E%3Cpath d='M92 26v10M87 31h10M88.5 27.5l7 7M95.5 27.5l-7 7'/%3E%3Cpath d='M26 46v8M22 50h8M23 47l6 6M29 47l-6 6'/%3E%3C/g%3E%3C/svg%3E");
   }
   a{color:inherit;text-decoration:none;display:block}
 
-  /* шапка */
-  .top{padding:26px 2px 20px;text-align:center}
-  .chip{display:inline-block;background:var(--lime-dim);color:var(--lime);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:6px 13px;border-radius:100px;margin-bottom:14px}
-  .top .title{font-family:"Unbounded",sans-serif;font-size:28px;font-weight:800;line-height:1.02;letter-spacing:-.03em;text-transform:uppercase;margin:0}
-  .top .title span{color:var(--lime)}
+  /* шапка + гирлянда */
+  .top{position:relative;padding:40px 2px 20px;text-align:center}
+  .top::before{content:"";position:absolute;left:-16px;right:-16px;top:0;height:26px;
+    background:
+      radial-gradient(circle at 50% 70%, #FFE08A 0 3.2px, transparent 4px) 0 0/38px 26px,
+      radial-gradient(circle at 50% 70%, #EF2A40 0 3.2px, transparent 4px) 19px 4px/38px 26px;
+    -webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);opacity:.9}
+  .top::after{content:"";position:absolute;left:-16px;right:-16px;top:10px;height:14px;border-bottom:1px solid rgba(233,185,73,.35);border-radius:0 0 50% 50%/0 0 100% 100%;
+    -webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+  .chip{display:inline-block;background:linear-gradient(180deg,#FFE9A8,#E0B04A 60%,#B8862A);color:#4A0610;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:6px 13px;border-radius:100px;margin-bottom:14px;box-shadow:0 3px 0 #7A5212}
+  .chip::before{content:"✦ "}
+  .top .title{font-family:"Unbounded",sans-serif;font-size:27px;font-weight:800;line-height:1.06;letter-spacing:-.03em;text-transform:uppercase;margin:0}
+  .top .title span{background:linear-gradient(180deg,#FFF6D6,#F3CF6D 45%,#C48F2C);-webkit-background-clip:text;background-clip:text;color:transparent}
   .sub{font-size:14.5px;line-height:1.45;color:var(--grey-2);margin:12px auto 0;max-width:34ch}
 
   /* заголовки секций */
   h2{font-family:"Unbounded",sans-serif;font-size:14px;font-weight:600;letter-spacing:.02em;color:var(--white);margin:28px 2px 12px;display:flex;align-items:center;gap:10px}
-  h2::before{content:"";flex:none;width:11px;height:13px;background:var(--lime);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)}
+  h2::before{content:"✦";flex:none;color:var(--lime);font-size:14px;line-height:1}
   h2::after{content:"";flex:1;height:1px;background:var(--line)}
 
   /* бронь */
-  .book{background:var(--lime);border-radius:18px;padding:20px 18px;color:#0A0A0A}
-  .book .cap{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
+  .book{position:relative;overflow:hidden;background:linear-gradient(140deg,#D11A2C 0%,#9B0D1B 55%,#4A0610 100%);border:1px solid rgba(233,185,73,.55);border-radius:18px;padding:20px 18px;color:#FFFFFF;box-shadow:0 14px 40px rgba(179,16,31,.35)}
+  .book::after{content:"";position:absolute;top:-40%;left:-30%;width:45%;height:180%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);transform:rotate(18deg);animation:kkshine 4.5s ease-in-out infinite}
+  @keyframes kkshine{0%,60%{left:-40%}100%{left:130%}}
+  .book .cap{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#FFE08A}
   .book h3{font-family:"Unbounded",sans-serif;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.08;margin:8px 0 10px;text-transform:uppercase}
-  .book p{margin:0 0 14px;font-size:14px;line-height:1.5;font-weight:500;opacity:.85}
-  .book .btn{text-align:center;background:#0A0A0A;color:var(--lime);font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:16px;border-radius:12px;cursor:pointer}
-  .book .btn:active{opacity:.85}
+  .book p{margin:0 0 14px;font-size:14px;line-height:1.5;font-weight:500;color:#F6E7D8}
+  .book .btn{position:relative;z-index:1;text-align:center;background:linear-gradient(180deg,#FFE08A,#E9B949 55%,#C9932A);color:#4A0610;font-size:15px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;padding:16px;border-radius:12px;cursor:pointer;box-shadow:0 4px 0 #8A5A12}
+  .book .btn:active{transform:translateY(2px);box-shadow:0 2px 0 #8A5A12}
 
-  /* расписание - светлый блок, чтобы выделялся на чёрном */
-  .sched{background:#FFFFFF;color:#0A0A0A;border-radius:18px;overflow:hidden;box-shadow:0 10px 40px rgba(204,255,0,.10)}
-  .ev{display:grid;grid-template-columns:76px 1fr;gap:12px;align-items:center;padding:15px 16px;border-top:1px solid rgba(10,10,10,.10)}
+  /* расписание - светлый блок */
+  .sched{background:var(--cream);color:#241A1C;border-radius:18px;overflow:hidden;border:1px solid rgba(233,185,73,.7);box-shadow:0 10px 40px rgba(233,185,73,.12)}
+  .ev{display:grid;grid-template-columns:76px 1fr;gap:12px;align-items:start;padding:16px;border-top:1px solid rgba(74,6,16,.12)}
   .ev:first-child{border-top:none}
-  .ev .d{font-family:"Unbounded",sans-serif;font-size:18px;font-weight:800;color:#0A0A0A;line-height:1.05;letter-spacing:-.03em}
-  .ev .d small{display:block;font-family:"Golos Text";font-size:11px;font-weight:700;color:#8A8A8A;letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
-  .ev .d .tm{display:block;font-family:"Unbounded",sans-serif;font-size:12.5px;font-weight:800;color:#0A0A0A;letter-spacing:-.02em;margin-top:6px}
-  .ev .tag{display:inline-block;background:#CCFF00;color:#0A0A0A;font-family:"Unbounded",sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:100px;margin-bottom:7px}
-  .ev .t{font-size:14.5px;font-weight:600;line-height:1.3;color:#0A0A0A}
-  .ev .s{font-size:12.5px;color:#5F5F5F;margin-top:3px}
-  .ev .tag i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#FF2D20;margin-right:7px;vertical-align:middle;box-shadow:0 0 0 3px rgba(255,45,32,.20);animation:kkpulse 1.4s ease-in-out infinite}
+  .ev .d{font-family:"Unbounded",sans-serif;font-size:18px;font-weight:800;color:#B3101F;line-height:1.05;letter-spacing:-.03em}
+  .ev .d small{display:block;font-family:"Golos Text";font-size:11px;font-weight:700;color:#8A7470;letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+  .ev .d .tm{display:block;font-family:"Unbounded",sans-serif;font-size:12.5px;font-weight:800;color:#241A1C;letter-spacing:-.02em;margin-top:6px}
+  .ev .tag{display:inline-block;background:#B3101F;color:#FFFFFF;font-family:"Unbounded",sans-serif;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:100px;margin-bottom:7px}
+  .ev .t{font-size:15px;font-weight:700;line-height:1.3;color:#241A1C}
+  .ev .s{font-size:13px;color:#5E4B4D;margin-top:5px;line-height:1.45}
+  .ev .tag i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#FFE08A;margin-right:7px;vertical-align:middle;box-shadow:0 0 0 3px rgba(255,224,138,.3);animation:kkpulse 1.4s ease-in-out infinite}
   @keyframes kkpulse{0%,100%{opacity:1}50%{opacity:.35}}
-  .ev .tag.big{background:#0A0A0A;color:#CCFF00;font-size:11px;padding:7px 12px;letter-spacing:.1em}
+  .ev .tag.big{background:#4A0610;color:#FFE08A;font-size:11px;padding:7px 12px;letter-spacing:.1em}
   .ev.big .t{font-size:16.5px;font-weight:700;line-height:1.25}
-  .ev.hot{background:#F7FFE2;box-shadow:inset 4px 0 0 #0A0A0A}
+  .ev.hot{background:#FFFDF4;box-shadow:inset 4px 0 0 #B3101F}
   .ev.done{opacity:.45}
 
-  /* темы (кнопки) */
-  .list{display:flex;flex-direction:column;gap:9px}
-  a.row,div.row{display:flex;align-items:center;gap:13px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 14px;cursor:pointer;transition:transform .1s ease,border-color .2s ease}
+  /* подарки (кнопки) */
+  .list{display:flex;flex-direction:column;gap:10px}
+  a.row,div.row{display:flex;align-items:center;gap:13px;background:linear-gradient(180deg,#22161A,#170F12);border:1px solid rgba(233,185,73,.45);border-radius:16px;padding:14px;cursor:pointer;transition:transform .1s ease,border-color .2s ease}
   a.row:active{transform:scale(.985);border-color:var(--lime)}
-  .row .n{flex:none;width:34px;height:38px;background:var(--lime-dim);display:flex;align-items:center;justify-content:center;font-family:"Unbounded",sans-serif;font-size:12px;font-weight:800;color:var(--lime);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)}
+  .row .n{flex:none;width:44px;height:44px;border-radius:12px;background:linear-gradient(140deg,#D11A2C,#7D0A18);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:inset 0 0 0 1px rgba(255,224,138,.5)}
   .row .body{flex:1;min-width:0;display:block}
-  .row .title{display:block;font-weight:600;font-size:15px;line-height:1.3}
+  .row .title{display:block;font-weight:700;font-size:15px;line-height:1.3}
   .row .sub2{display:block;color:var(--grey-2);font-size:12.5px;margin-top:2px}
-  .row .chev{color:var(--lime);font-size:20px;flex:none;font-weight:600}
-  /* скоро */
+  .row .chev{color:var(--lime);font-size:22px;flex:none;font-weight:600}
   div.row.soon{cursor:default;opacity:.62;border-style:dashed}
   div.row.soon .n{background:rgba(255,255,255,.05);color:var(--grey)}
   div.row.soon .badge{flex:none;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);border:1px solid var(--line);border-radius:100px;padding:5px 9px}
 
   /* агенты */
-  .agents{background:var(--card);border-radius:18px;overflow:hidden}
+  .agents{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
   .ag{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:baseline;padding:11px 16px;border-top:1px solid var(--line)}
   .ag:first-child{border-top:none}
-  .ag .n{font-family:"Unbounded",sans-serif;font-size:11px;font-weight:800;color:var(--lime);opacity:.8}
+  .ag .n{font-family:"Unbounded",sans-serif;font-size:11px;font-weight:800;color:var(--lime);opacity:.85}
   .ag .t{font-size:14px;line-height:1.35}
   .ag .t b{font-weight:600;color:var(--white)}
   .ag .t span{color:var(--grey-2)}
@@ -92,9 +103,10 @@
   .note b{color:var(--lime);font-weight:600}
 
   /* цена */
-  .price{background:linear-gradient(180deg,#1F2415,#15180F);border:1px solid var(--lime);border-radius:18px;padding:20px 18px;text-align:center;margin-top:10px}
+  .price{position:relative;overflow:hidden;background:linear-gradient(180deg,#2A1014,#160A0C);border:1px solid var(--lime);border-radius:18px;padding:20px 18px;text-align:center;margin-top:10px}
+  .price::after{content:"";position:absolute;top:-50%;left:-30%;width:40%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,224,138,.12),transparent);transform:rotate(18deg);animation:kkshine 5.5s ease-in-out infinite}
   .price .cap{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
-  .price .now{font-family:"Unbounded",sans-serif;font-size:34px;font-weight:800;color:var(--lime);line-height:1;letter-spacing:-.04em;margin-top:10px}
+  .price .now{font-family:"Unbounded",sans-serif;font-size:34px;font-weight:800;line-height:1;letter-spacing:-.04em;margin-top:10px;background:linear-gradient(180deg,#FFF6D6,#F3CF6D 45%,#C48F2C);-webkit-background-clip:text;background-clip:text;color:transparent}
   .price .was{font-size:15px;color:#fff;opacity:.5;text-decoration:line-through;text-decoration-thickness:2px;margin-top:6px}
   .price .meta{font-size:12.5px;color:var(--grey);margin-top:12px;line-height:1.5}
   .price .meta b{color:var(--grey-2);font-weight:600}
@@ -110,34 +122,36 @@
    ============================================================ */
 window.KK_DATA = {
   chip: "для участников предзаписи",
-  title: "Предобучение <span>Claude</span>",
-  sub: "Материалы предобучения и бронь места в новой группе.",
+  title: "Интенсив <span>НЕЙРО СММ</span>",
+  sub: "Бронь места в новой группе, два бесплатных эфира про сезон распродаж и подарки.",
 
   /* ---- бронь ---- */
   book: {
-    cap: "гарантированное место",
+    cap: "интенсив по Claude «НЕЙРО СММ»",
     title: "Бронь за 1 000 ₽",
-    text: "Закрепляет место в новой группе и фиксирует цену 19 990 ₽ до самого старта. Тысяча входит в стоимость программы.",
+    text: "Гарантированное место в новой группе комплексной программы «НЕЙРО СММ». На интенсиве мы выстраиваем ваш маркетинговый AI-отдел из 11 агентов. Бронь фиксирует цену 19 990 ₽ до старта 9 ноября, тысяча входит в стоимость.",
     button: "Забронировать место",
     url: "https://contentkuhnya.ru/neuropr"
   },
 
   /* ---- расписание. state: "done" прошло, "hot" главное, "" обычное ---- */
-  /* ---- расписание убрано: пустой массив скрывает весь блок ---- */
-  schedule: [],
+  schedule: [
+    { d: "5 ноя", w: "четверг", time: "19:00 МСК", tag: "вебинар", live: true, state: "hot", big: true,
+      t: "Как выжать максимум из сезона распродаж с одной подпиской Claude за $20",
+      s: "Бесплатно. Что запустить к Чёрной пятнице и Новому году. Контент, который пробивает баннерную слепоту. Колесо фортуны, коробки и адвент-календарь за 5 минут." },
+    { d: "7 ноя", w: "суббота", time: "15:00 МСК", tag: "мастер-класс",
+      t: "Собираем распродажу с Claude за один вечер",
+      s: "Бесплатно. Повторяете за мной на своём проекте: продукт, страница, механика и прогрев. К концу эфира у вас есть что продавать." }
+  ],
 
-  /* ---- материалы. soon: true  = ещё не вышло, кнопка неактивна ---- */
+  /* ---- подарки. soon: true = ещё не вышло, кнопка неактивна ---- */
   topics: {
-    title: "Материалы предобучения",
+    title: "Подарки к сезону",
     items: [
-      { n: "01", title: "Скилл для сценариев рилс", sub: "Пишет качественный сценарий из любой заметки или голосового", url: "https://t.me/c/2190640002/849" },
-      { n: "02", title: "Смыслы продукта и кастдев через Claude", sub: "Разбираем, что продаёт ваш продукт и как это упаковать", url: "https://t.me/c/2190640002/852" },
-      { n: "03", title: "Claude и ваш Instagram", sub: "Подключаем и делаем качественный анализ профиля", url: "https://t.me/c/2190640002/852" },
-      { n: "04", title: "Мини-приложение для Telegram и MAX", sub: "Собираем своё приложение для канала", url: "https://t.me/c/2190640002/867" },
-      { n: "05", title: "Виральные идеи в вашей нише", sub: "Ищем через Claude то, что выстрелит именно у вас", url: "https://t.me/c/2190640002/871" }
+      { n: "🧮", title: "Калькулятор сезона", sub: "Посчитайте, сколько вы заработаете в ноябре и декабре", url: "https://t.me/c/2190640002/932" },
+      { n: "🎁", title: "10 игровых механик", sub: "Колесо фортуны, коробки, скретч-карта и ещё 7 игр для распродажи", url: "https://t.me/c/2190640002/935" }
     ]
   },
-
   /* ---- 11 агентов ---- */
   agentsTitle: "11 агентов - это программа интенсива",
   agents: [
@@ -157,7 +171,7 @@ window.KK_DATA = {
 
   /* ---- цена ---- */
   price: {
-    cap: "цена по предзаписи",
+    cap: "интенсив «НЕЙРО СММ» · цена по предзаписи",
     now: "19 990 ₽",
     was: "29 990 ₽",
     meta: "старт <b>9 ноября</b> · доступ на 1 год · без предзаписи цена 29 990 ₽"
@@ -166,7 +180,7 @@ window.KK_DATA = {
   footer: "Виктория Ложникова · школа «Контент Кухня»"
 };
 
-window.KK_HEADER_COLOR = "#0A0A0A";
+window.KK_HEADER_COLOR = "#0B0709";
 </script>
 
 <div id="kk-app"></div>
